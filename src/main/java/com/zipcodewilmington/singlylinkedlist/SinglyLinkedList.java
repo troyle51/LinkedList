@@ -110,4 +110,23 @@ public class SinglyLinkedList {
         return false;
     }
 
+    public boolean contains(Object value){
+        for (int i = 0; i < size(); i++){
+            if(get(i) == value){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public int find(Object value){
+        for (int i = 0; i < size(); i++){
+            if(get(i) == value){
+                int index = i;
+                return index;
+            }
+        }
+        return -1;
+    }
+
 }
