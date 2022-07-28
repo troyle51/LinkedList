@@ -129,4 +129,56 @@ public class SinglyLinkedList {
         return -1;
     }
 
+    public void sort(){
+        Node current = head, index = null;
+
+        Object temp;
+        if(head == null){
+            return;
+        } else {
+            while (current != null){
+                index = current.next;
+                while(index != null){
+                    if((Integer)current.data > (Integer)index.data) {
+                        temp = current.data;
+                        current.data = index.data;
+                        index.data = temp;
+                    }
+                    index = index.next;
+                }
+                current = current.next;
+            }
+        }
+    }
+
+    public SinglyLinkedList copy(){
+        SinglyLinkedList copy = new SinglyLinkedList();
+
+        Node p, nodeBefore;
+        copy.head = new Node(head.data, null);
+        p = head.next;
+        nodeBefore = copy.head;
+
+        while(p != null){
+            nodeBefore.next = new Node(p.data, null);
+            nodeBefore = nodeBefore.next;
+            p = p.next;
+        }
+        return copy;
+    }
+
+    public void display(){
+        Node current = head;
+
+        if(head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        while (current != null){
+            System.out.println(current.data + " ");
+            current = current.next;
+        }
+        System.out.println();
+    }
+
 }

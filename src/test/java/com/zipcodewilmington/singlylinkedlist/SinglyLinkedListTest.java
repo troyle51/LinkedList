@@ -79,6 +79,39 @@ public class SinglyLinkedListTest {
         Assert.assertEquals(expected, node.find(7));
     }
 
+    @Test
+    public void testSort(){
+        SinglyLinkedList nodeList = new SinglyLinkedList();
+        nodeList.add(3);
+        nodeList.add(2);
+        nodeList.add(5);
+
+        nodeList.sort();
+    }
+
+    @Test
+    public void testDisplay(){
+        SinglyLinkedList nodeList = new SinglyLinkedList();
+        nodeList.add(3);
+        nodeList.add(2);
+        nodeList.add(5);
+
+        nodeList.sort();
+        nodeList.display();
+    }
+
+    @Test
+    public void testCopy(){
+        SinglyLinkedList nodeList = new SinglyLinkedList();
+        nodeList.add(3);
+        nodeList.add(2);
+        nodeList.add(5);
+
+        nodeList.sort();
+        nodeList.copy();
+
+    }
+
 
 
 
